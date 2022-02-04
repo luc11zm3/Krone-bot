@@ -21,6 +21,7 @@ module.exports = {
 		    info.introduction = 'Không có';
 		    info.role = 'Thành viên nhóm:';
 		    info.group = 'Không có';
+		    info.upload = false;
 		    infoR.each(function(i, e){
 				let col1 = $(this).find('.col-1').text().trim();
 				let col2 = $(this).find('.col-2').text().trim();
@@ -47,10 +48,7 @@ module.exports = {
 				case 'Quyền Upload:':{
 					if(col2 === 'Chủ thớt'){
 					    info.upload = true
-					}else{
-						info.upload = false
-					    }
-					}
+					}					}
 				    break;
 				case 'Giới tính:':{
 					info.gender = col2 || 'Không có';
@@ -78,12 +76,6 @@ module.exports = {
 				case 'Thành tựu:':{
 					info.point = parseInt(col2);
 					}
-				case 'Danh Hiệu:':{
-					info.badges = [];
-					let badges = $(this).find('.col-2').find('a').find('img').attr('title');
-					//console.log(badges);
-					}
-				    break;
 				case 'Giới thiệu:':{
 					info.introduction = col2;
 				    }
