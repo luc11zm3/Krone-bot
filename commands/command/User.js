@@ -88,7 +88,7 @@ module.exports = {
                 info.avatar_url = 'https://hentaivn.moe'+info.avatar_url
         }
         let uploadText = 'Không';
-        if(info.upload === true){ uploadText = 'có' }
+        if(info.upload === true){ uploadText = 'Có' }
         embed.setThumbnail(`${info.avatar_url}`)
         embed.setColor('RANDOM');
         //embed.setImage('https://i.imgur.com/AfFp7pu.png')
