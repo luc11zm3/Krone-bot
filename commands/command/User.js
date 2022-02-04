@@ -84,9 +84,9 @@ module.exports = {
 			    
 		    //console.log(`${col1}|${col2} \n =======================================`);
 	    })
+
 	//
 	//console.log(info);
-	//let urlAvatar = 
 	if(info.avatar_url === '/icon/mac_dinh.png'){
 	    info.avatar_url = 'https://hentaivn.moe'+info.avatar_url
 	}else if(info.avatar_url.toLowerCase().includes('/avatar/')){
@@ -119,6 +119,6 @@ module.exports = {
 	message.channel.send({ embeds : [embed] });
 	//
        // console.log(info)
-	})   
+	})
     },
 };
