@@ -13,11 +13,7 @@ global.client = new Client({
 client.config = require('./config');
 client.HTVN = require('./lucihtvn');
 global.player = new Player(client, client.config.opt.discordPlayer);
-client.on('messageCreate', msg =>{
-    if(msg.content === 'ok'){
-        console.log(client.HTVN.UserInfo(208284))
-    }
-})
+
 require('./src/loader');
 require('./src/events');
 
