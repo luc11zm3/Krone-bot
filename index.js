@@ -11,7 +11,6 @@ global.client = new Client({
     disableMentions: 'everyone',
 });
 client.config = require('./config');
-client.HTVN = require('./lucihtvn');
 global.player = new Player(client, client.config.opt.discordPlayer);
 
 require('./src/loader');
