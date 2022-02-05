@@ -1,6 +1,6 @@
 const { Player } = require('discord-player');
 const { Client, Intents } = require('discord.js');
-
+//mongodb
 global.client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
@@ -10,6 +10,7 @@ global.client = new Client({
     ],
     disableMentions: 'everyone',
 });
+client.UserInfo = require('./lucihtvn.js');
 client.config = require('./config');
 global.player = new Player(client, client.config.opt.discordPlayer);
 
