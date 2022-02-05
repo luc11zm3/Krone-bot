@@ -26,10 +26,8 @@ let a = rand(activity);
 let type;
 if(getPos(a)>-1 && getPos(a)<5){
 	type = 'LISTENING';
-	console.log(getPos(a)+'lis')
 }else if(getPos(a)>4 && getPos(a)<11){
 	type = 'WATCHING';
-	console.log(getPos(a)+'qat')
 }
 	//
 	client.user.setActivity(a, { type: type });
