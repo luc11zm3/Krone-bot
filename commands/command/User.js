@@ -97,7 +97,7 @@ module.exports = {
 	
 	embed.setThumbnail(`${info.avatar_url}`)
 	embed.setColor('RANDOM');
-	embed.setTitle(`**${info.name}**ID: ${info.id.slice(3)}`);
+	embed.setTitle(`**${info.name}** ID: ${info.id.slice(3)}`);
 	embed.addFields(
 	{ name: `${info.role}`, value: `${info.group}`, inline: true },
 	{ name: 'Quyền Upload:', value: `${uploadText}`, inline: true },
