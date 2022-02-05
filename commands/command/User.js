@@ -89,7 +89,7 @@ module.exports = {
 	//console.log(info);
 	if(info.avatar_url === '/icon/mac_dinh.png'){
 	    info.avatar_url = 'https://hentaivn.moe'+info.avatar_url
-	}else if(info.avatar_url.toLowerCase.includes('/avatar/')){
+	}else if(info.avatar_url.toLowerCase().includes('/avatar/')){
 		info.avatar_url = 'https://hentaivn.moe'+info.avatar_url
 	}
 	let uploadText = 'Không';
