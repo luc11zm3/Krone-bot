@@ -1,6 +1,5 @@
 const { Player } = require('discord-player');
 const { Client, Intents } = require('discord.js');
-//mongodb
 global.client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,

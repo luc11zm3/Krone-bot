@@ -12,10 +12,13 @@
     "axios": "^0.25.0",
     "discord-player": "^5.2.2",
     "discord.js": "^13.6.0",
+    "discord.js-light": "^4.6.0",
     "ffmpeg-static": "^4.4.0",
     "ms": "^3.0.0-canary.1",
+    "nana-api": "^1.1.5",
     "nodemon": "^2.0.15",
-    "opusscript": "^0.0.8"
+    "opusscript": "^0.0.8",
+    "pg": "^8.7.3"
   },
   "engines": {
     "node": "17.0.1"

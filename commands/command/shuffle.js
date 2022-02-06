@@ -4,7 +4,7 @@ module.exports = {
     utilisation: 'shuffle',
     voiceChannel: true,
     description: 'Trộn danh sách phát.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     async execute(client, message) {
         const queue = player.getQueue(message.guild.id);

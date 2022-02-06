@@ -4,7 +4,7 @@ module.exports = {
     utilisation: 'clear',
     voiceChannel: true,
     description: 'Xoá hết tất cả nhạc trong danh sách phát.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
 
     async execute(client, message) {

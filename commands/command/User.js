@@ -6,7 +6,7 @@ module.exports = {
     aliases: [],
     utilisation: 'User <ID>',
     description: 'Hiển thị thông tin của người dùng thuộc hentaivn.moe.',
-    type: 'Thông tin',
+    type: '📜Thông tin',
 
     async execute(client, message, args) {
     const embed = new MessageEmbed()

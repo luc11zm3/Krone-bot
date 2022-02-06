@@ -7,7 +7,7 @@ module.exports = {
     utilisation: 'search [song name]',
     voiceChannel: true,
     description: 'Tìm kiếm và thêm nhạc vào danh sách phát',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     async execute(client, message, args) {
         if (!args[0]) return message.channel.send(`Nhập đàng hoàng để trống ăn cặc à 🖕`);

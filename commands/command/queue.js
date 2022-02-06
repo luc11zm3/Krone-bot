@@ -6,7 +6,7 @@ module.exports = {
     utilisation: 'queue',
     voiceChannel: true,
     description: 'Hiển thị danh sách phát.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     execute(client, message) {
         const queue = player.getQueue(message.guild.id);

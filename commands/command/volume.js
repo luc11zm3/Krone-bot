@@ -6,7 +6,7 @@ module.exports = {
     utilisation: `volume [1-${maxVol}]`,
     voiceChannel: true,
     description: 'Điều chỉnh âm lượng.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     execute(client, message, args) {
         const queue = player.getQueue(message.guild.id);

@@ -6,14 +6,15 @@ const info = {}
 		const response = await axios.get(`https://hentaivn.moe/user-${id}`)
 		const html = response.data;
 		    $ = cheerio.load(html);
-		    //get 
+		    //get info
 		    info.name = $(html).find('.wall-name').find('h2').text()
 		    info.avatar_url = $(html).find('.wall-avatar').find('img').attr('src') || '';
-		    const infoR = $(html).find('.info-row');
 		    info.introduction = 'Không có';
 		    info.role = 'Thành viên nhóm:';
 		    info.group = 'Không có';
 		    info.upload = false;
+			//
+			const infoR = $(html).find('.info-row');
 		    infoR.each(function(i, e){
 				let col1 = $(this).find('.col-1').text().trim();
 				let col2 = $(this).find('.col-2').text().trim();
@@ -43,14 +44,14 @@ const info = {}
 					}					}
 				    break;
 				case 'Giới tính:':{
-					info.gender = col2 || 'Không có';
+					info.gender = col2 || 'Không thể xác định';
 				    }
 				    break;
 				case 'Ngày sinh:':{
-					info.birthday = col2 || 'Không có';
+					info.birthday = col2 || 'Không thể xác định';
 				    }
 				case 'Gia nhập:':{
-					info.join = col2;
+					info.join = col2 || 'Không thể xác định';
 					}	
 				    break;
 				case 'Đã bình luận:':{
@@ -73,10 +74,7 @@ const info = {}
 				    }
 				    break;
 			    }
-			    
-		    //console.log(`${col1}|${col2} \n =======================================`);
-	    })
-	//return data
+		})
 	return info;
 }
 

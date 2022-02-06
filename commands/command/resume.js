@@ -4,7 +4,7 @@ module.exports = {
     utilisation: 'resume',
     voiceChannel: true,
     description: 'Tiếp tục bài hát hiện tại',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     execute(client, message) {
         const queue = player.getQueue(message.guild.id);

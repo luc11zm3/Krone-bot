@@ -6,7 +6,7 @@ module.exports = {
     utilisation: 'loop <queue>',
     voiceChannel: true,
     description: 'lặp lại danh sách phát/bài hát',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
 
     execute(client, message, args) {

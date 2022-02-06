@@ -5,7 +5,7 @@ module.exports = {
     utilisation: 'play [song name/URL]',
     voiceChannel: true,
     description: 'Thêm nhạc vào danh sách phát.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
     async execute(client, message, args) {
         if (!args[0]) return message.channel.send(`Biết dùng bot không? ${client.config.app.px}play rồi thêm cái tên bài hát vào ❌`);

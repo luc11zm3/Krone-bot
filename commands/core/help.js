@@ -14,28 +14,25 @@ module.exports = {
 				const embed = new MessageEmbed();
 				embed.setColor('RANDOM');
 				embed.setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
-				embed.addField(`Có thể dùng - ${commands.size}`, commands.map(x => `\`${x.name}${x.aliases[0] ? `(${x.aliases.map(y => y).join(', ')})\`` : '\`'}`).join(', '));
-				embed.setTimestamp();
-				message.channel.send({ embeds: [embed] });
-				
-		/*var type = [], typeList = [];
-        commands.forEach(command => {
-            typeList.push(command.type);
-
+				embed.setDescription(`Prefix bot là: ${client.config.app.px}`)
+		var categories = [], categoryList = [];
+		commands.forEach(command => {
+                if (!categories[command.type]) categories[command.type] = [];
+                categories[command.type].push(command);
+                if (categories[command.type].length == 1) categoryList.push(command.type);
         });
-        console.log(typeList);
-        for (var i = 0; i < categoryList.length; i++) {
-            var category = categoryList[i], commands = [];
+		for (var i = 0; i < categoryList.length; i++) {
+            var category = categoryList[i], commands1 = [];
             for (var j = 0; j < categories[category].length; j++) {
                 var command = categories[category][j];
-                commands.push(command.config.name);
+                commands1.push('`'+command.name.charAt(0).toUpperCase() + command.name.slice(1)+'`');
             }
-            embed.addField(category, commands.join(", "), false);
+            	embed.addField(`${category}`, `${commands1.join(" ")}`, false);
         }
-        message.channel.send(embed);*/
-    }else{
-    		const name = args[0].toLowerCase();
-			const command = client.commands.get(name) || client.commands.find(c => c.aliases && c.aliases.includes(name));
+	    	message.channel.send({ embeds: [embed] });
+	    }else{
+	    		const name = args[0].toLowerCase();
+				const command = client.commands.get(name) || client.commands.find(c => c.aliases && c.aliases.includes(name));
 			
 			if (!command) {
 				return message.reply("Sai cụ mày lệnh rồi");

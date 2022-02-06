@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['trans'],
     utilisation: 'translate [smth]',
     description: 'Dịch từ tiếng anh sang tiếng việt.',
-    type: 'Khác',
+    type: '🥒Làm truyện',
 
     execute(client, message, args) {
        const content = args.join(' ');

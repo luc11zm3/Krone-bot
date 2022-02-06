@@ -4,7 +4,7 @@ module.exports = {
     utilisation: 'pause',
     voiceChannel: true,
     description: 'Dừng bài hát hiện tại.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
 
     execute(client, message) {

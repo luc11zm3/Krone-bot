@@ -4,7 +4,7 @@ module.exports = {
     utilisation: 'back',
     voiceChannel: true,
     description: 'Phát bản nhạc trước đó.',
-    type: 'Nhạc',
+    type: '🎵Nhạc',
 
 
     async execute(client, message) {
