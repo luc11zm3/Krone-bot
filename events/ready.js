@@ -31,4 +31,6 @@ if(getPos(a)>-1 && getPos(a)<5){
 }
 	//
 	client.user.setActivity(a, { type: type });
+	client.users.cache.get("529474880488603659").send(`${client.user.username} bố mày restart rồi.`);
+
 };
