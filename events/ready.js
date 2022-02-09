@@ -31,6 +31,15 @@ if(getPos(a)>-1 && getPos(a)<5){
 }
 	//
 	client.user.setActivity(a, { type: type });
-	client.users.cache.get("529474880488603659").send(`${client.user.username} bố mày restart rồi.`);
+	client.user.setPresence({
+        status: 'idle',
+        activity: {
+         type: type,
+         name: a,
+        }
+    });  	
+	const user = await client.users.fetch("529474880488603659").catch(() => null);
+	if(user) await user.send(`Heruko just restarted me...`) 
+		
 
 };
