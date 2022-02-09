@@ -26,12 +26,17 @@ module.exports = {
         const embed = new MessageEmbed();
 
         embed.setColor('RANDOM');
-        embed.setAuthor(`Kết quả cho ${args.join(' ')}`, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
+        embed.setAuthor({
+            name: `Kết quả cho ${args.join(' ')}`, 
+            iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
+    });
 
         const maxTracks = res.tracks.slice(0, 10);
 
         embed.setDescription(`${maxTracks.map((track, i) => `**${i + 1}**. ${track.title} | ${track.author}`).join('\n')}\n\nChọn từ **1** tới **${maxTracks.length}** hoặc là **cancel** ⬇️`);
-
+        embed.setFooter({
+            name: 'BOt coded by luciizme#2603'
+        })
         embed.setTimestamp();
         message.channel.send({ embeds: [embed] });
 

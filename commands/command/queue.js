@@ -20,7 +20,10 @@ module.exports = {
 
         embed.setColor('RANDOM');
         embed.setThumbnail(message.guild.iconURL({ size: 2048, dynamic: true }));
-        embed.setAuthor(`Danh sách phát của Server - ${message.guild.name} ${methods[queue.repeatMode]}`, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
+        embed.setAuthor({
+            name: `Danh sách phát của Server - ${message.guild.name} ${methods[queue.repeatMode]}`, 
+            iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
+    });
 
         const tracks = queue.tracks.map((track, i) => `**${i + 1}** - ${track.title} | ${track.author} (Yêu cầu bởi : ${track.requestedBy.username})`);
 
@@ -28,7 +31,7 @@ module.exports = {
         const nextSongs = songs > 5 ? `Và **${songs - 5}** bài nữa...` : `Danh sách phát có **${songs}** bài...`;
 
         embed.setDescription(`Hiện tại đang phát: ${queue.current.title}\n\n${tracks.slice(0, 5).join('\n')}\n\n${nextSongs}`);
-
+        embed.setFooter('BOT coded by luciizme#2603')
         embed.setTimestamp();
 
         message.channel.send({ embeds: [embed] });

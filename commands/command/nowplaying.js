@@ -19,7 +19,10 @@ module.exports = {
 
         embed.setColor('RANDOM');
         embed.setThumbnail(track.thumbnail);
-        embed.setAuthor(track.title, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
+        embed.setAuthor({
+            name: track.title, 
+            iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
+    });
 
         const methods = ['tắt', 'one', 'queue'];
 
@@ -27,7 +30,9 @@ module.exports = {
         const trackDuration = timestamp.progress == 'Infinity' ? 'infinity (live)' : track.duration;
 
         embed.setDescription(`Âm đ.. lượng **${queue.volume}**%\nThời gian **${trackDuration}**\nLoop mode **${methods[queue.repeatMode]}**\nĐược bật bởi ${track.requestedBy}`);
-
+        embed.setFooter({
+            text: 'BOT coded by luciizme#2603'
+        })
         embed.setTimestamp();
 
         message.channel.send({embeds :[embed]});
