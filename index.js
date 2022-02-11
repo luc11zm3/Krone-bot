@@ -6,12 +6,6 @@ process.on('uncaughtRejection', err => {
 });
 const { Player } = require('discord-player');
 const { Client, Intents, MessageEmbed } = require('discord.js');
-
-const embed = new MessageEmbed();
-    embed.setFooter({
-        text: 'BOT coded by: luciizme#2603'
-});
-client.embed = embed;
 global.client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
@@ -21,6 +15,11 @@ global.client = new Client({
     ],
     disableMentions: 'everyone',
 });
+const embed = new MessageEmbed();
+    embed.setFooter({
+        text: 'BOT coded by: luciizme#2603'
+});
+client.embed = embed;
 client.UserInfo = require('./lucihtvn.js');
 client.config = require('./config');
 global.player = new Player(client, client.config.opt.discordPlayer);
