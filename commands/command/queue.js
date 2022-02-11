@@ -8,32 +8,37 @@ module.exports = {
     description: 'Hiển thị danh sách phát.',
     type: '🎵Nhạc',
 
-    execute(client, message) {
+    async execute(client, message, args) {
         const queue = player.getQueue(message.guild.id);
 
         if (!queue) return message.channel.send(`Đéo có bài nào đang chạy hết... ❌`);
-
-        if (!queue.tracks[0]) return message.channel.send(`Danh sách phát có 1 bài hiện tại thôi... ❌`);
-
-        const embed = new MessageEmbed();
-        const methods = ['', '🔁', '🔂'];
-
-        embed.setColor('RANDOM');
-        embed.setThumbnail(message.guild.iconURL({ size: 2048, dynamic: true }));
-        embed.setAuthor({
-            name: `Danh sách phát của Server - ${message.guild.name} ${methods[queue.repeatMode]}`, 
-            iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
-    });
-
-        const tracks = queue.tracks.map((track, i) => `**${i + 1}** - ${track.title} | ${track.author} (Yêu cầu bởi : ${track.requestedBy.username})`);
-
-        const songs = queue.tracks.length;
-        const nextSongs = songs > 5 ? `Và **${songs - 5}** bài nữa...` : `Danh sách phát có **${songs}** bài...`;
-
-        embed.setDescription(`Hiện tại đang phát: ${queue.current.title}\n\n${tracks.slice(0, 5).join('\n')}\n\n${nextSongs}`);
-        embed.setFooter('BOT coded by luciizme#2603')
-        embed.setTimestamp();
-
-        message.channel.send({ embeds: [embed] });
+        if (args[0] && isNaN(args[0])) return message.channel.send("Nhập vị trí vào con chó lồn ❌");
+        if (!queue.tracks[0]) return message.channel.send(`Có 1 bài queue lồn... ❌`);
+        //if(!args[0]){
+                const embed = new MessageEmbed();
+                const methods = ['', '🔁', '🔂'];
+        
+                embed.setColor('RANDOM');
+                embed.setThumbnail(message.guild.iconURL({ size: 2048, dynamic: true }));
+                embed.setAuthor({
+                    name: `Danh sách phát của Server - ${message.guild.name} ${methods[queue.repeatMode]}`, 
+                    iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
+            });
+            var page = parseInt(args[0] ? args[0] : 1);
+            let tracks = []
+                tracks.push(`Hiện tại đang phát: ${queue.current.title} (Yêu cầu bởi: ${queue.current.requestedBy.username})\n`)                    
+                for (var i = 5 * (page - 1); i < 5 * page; i++) {
+                    if (queue.tracks[i]) tracks.push(` **${i+1}** - ${queue.tracks[i].title} (Yêu cầu bởi : ${queue.tracks[i].requestedBy.username}) `);
+                        else break;
+                }
+                const songs = queue.tracks.length;
+                const nextSongs =`Danh sách phát có **${songs}** bài...`;
+                const lastNext = "`" + client.config.app.px +"queue" + "[Số trang]" + "`" + " để chuyển tiếp giữa các trang"
+                embed.setDescription(`${tracks.join("\n")}\n\n ${nextSongs}\n ${lastNext} `);
+                embed.setFooter(client.embed.footer);
+                embed.setTimestamp();
+                
+                message.channel.send({ embeds: [embed] });
+        
     },
 };
