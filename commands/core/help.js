@@ -13,10 +13,6 @@ module.exports = {
 		if(!args[0]){
 				const embed = new MessageEmbed();
 				embed.setColor('RANDOM');
-				embed.setAuthor({
-					name: client.user.username, 
-					iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
-			});
 				embed.setDescription(`Prefix bot là: ${client.config.app.px}`)
 		var categories = [], categoryList = [];
 		commands.forEach(command => {
@@ -32,9 +28,7 @@ module.exports = {
             }
             	embed.addField(`${category}`, `${commands1.join(" ")}`, false);
         }
-        		embed.setFooter({
-        			text:'BOT coded by luciizme#2603'
-        		})
+    		embed.setFooter(client.embed.footer)
 	    	message.channel.send({ embeds: [embed] });
 	    }else{
 	    		const name = args[0].toLowerCase();
@@ -48,15 +42,9 @@ module.exports = {
 			embedcommandinfo.setTitle(`**Lệnh:** ${command.name}`)
 			    .setColor("RANDOM")
 			    .setDescription(`**Mô tả:**\n${command.description}`)
-    if (command.aliases) embedcommandinfo.addField(`**Dùng nhanh:**`, ` \`${command.aliases.join(', ') || "None"}\` `, true);
-    if (command.utilisation) embedcommandinfo.addField(`**Cách dùng:**`, `${client.config.app.px}${command.utilisation}`)
-				embedcommandinfo.setAuthor({
-					name: client.user.username, 
-					iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })
-				});
-        		embedcommandinfo.setFooter({
-        			text:'BOT coded by luciizme#2603'
-        		})
+		    if (command.aliases) embedcommandinfo.addField(`**Dùng nhanh:**`, ` \`${command.aliases.join(', ') || "None"}\` `, true);
+		    if (command.utilisation) embedcommandinfo.addField(`**Cách dùng:**`, `${client.config.app.px}${command.utilisation}`)
+    		embedcommandinfo.setFooter(client.embed.footer)
 		message.channel.send({ embeds: [embedcommandinfo] });
   
 		} 
