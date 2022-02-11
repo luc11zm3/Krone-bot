@@ -6,6 +6,12 @@ process.on('uncaughtRejection', err => {
 });
 const { Player } = require('discord-player');
 const { Client, Intents } = require('discord.js');
+
+const embed = new MessageEmbed();
+    embed.setFooter({
+        text: 'BOT coded by: luciizme#2603'
+});
+client.embed = embed;
 global.client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
