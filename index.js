@@ -5,7 +5,7 @@ process.on('uncaughtRejection', err => {
     console.error('BOT bị lỗi cmnr.\n', err);
 });
 const { Player } = require('discord-player');
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, MessageEmbed } = require('discord.js');
 
 const embed = new MessageEmbed();
     embed.setFooter({
