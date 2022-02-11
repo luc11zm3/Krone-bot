@@ -1,3 +1,9 @@
+process.on('uncaughtException', err => {
+    console.error('BOT bị lỗi cmnr.\n', err);
+});
+process.on('uncaughtRejection', err => {
+    console.error('BOT bị lỗi cmnr.\n', err);
+});
 const { Player } = require('discord-player');
 const { Client, Intents } = require('discord.js');
 global.client = new Client({
