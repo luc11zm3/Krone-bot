@@ -34,9 +34,6 @@ module.exports = {
         const maxTracks = res.tracks.slice(0, 10);
 
         embed.setDescription(`${maxTracks.map((track, i) => `**${i + 1}**. ${track.title} | ${track.author}`).join('\n')}\n\nChọn từ **1** tới **${maxTracks.length}** hoặc là **cancel** ⬇️`);
-        embed.setFooter({
-            name: 'BOt coded by luciizme#2603'
-        })
         embed.setTimestamp();
         message.channel.send({ embeds: [embed] });
 
