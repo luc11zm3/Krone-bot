@@ -21,6 +21,7 @@ const embed = new MessageEmbed();
 });
 client.embed = embed;
 client.UserInfo = require('./lucihtvn.js');
+client.rule34 = require('./rule34.js');
 client.config = require('./config');
 global.player = new Player(client, client.config.opt.discordPlayer);
 
