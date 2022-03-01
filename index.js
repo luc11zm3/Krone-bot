@@ -19,6 +19,7 @@ const embed = new MessageEmbed();
     embed.setFooter({
         text: 'BOT coded by: luciizme#2603'
 });
+client.convert = require('./convert.js');
 client.embed = embed;
 client.UserInfo = require('./lucihtvn.js');
 client.rule34 = require('./rule34.js');

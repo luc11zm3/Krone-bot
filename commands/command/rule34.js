@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(client, message, args) {
         const msg = await message.channel.send('Đang tìm ảnh...');
-        const url = await client.rule34(args.join("_"));
+        const url = await client.rule34(client.convert(args.join(" ")));
         if(url === 0) return msg.edit('Không thể tìm thấy');
         msg.delete();
         message.channel.send(url)
