@@ -20,7 +20,8 @@
     "nana-api": "^1.1.5",
     "nodemon": "^2.0.15",
     "opusscript": "^0.0.8",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "ytdl-core": "^4.11.0"
   },
   "engines": {
     "node": "17.0.1"
