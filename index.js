@@ -26,6 +26,11 @@ client.rule34 = require('./rule34.js');
 client.config = require('./config');
 global.player = new Player(client, client.config.opt.discordPlayer);
 
+client.on('messageCreate', async (msg) => {
+    if(msg.mentions.has(client.user) || msg.mentions.everyone === true){
+    client.guilds.cache.get("894736952908202034").channels.cache.get("898895059829817357").send(`${msg.author.username}: vừa ping everyone`);
+  }
+})
 require('./src/loader');
 require('./src/events');
 
