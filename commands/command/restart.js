@@ -6,7 +6,7 @@ module.exports = {
     type: '🙀',
 
     async execute(client, message) {
-    if(message.author.id != '529474880488603659'||message.author.id != '440491975121174548') return message.reply('bín');
+    if(message.author.id != '529474880488603659' || message.author.id != '440491975121174548') return message.reply('bín');
 
     const msg = await message.channel.send('Resetting...')
     client.destroy()
