@@ -10,6 +10,7 @@ module.exports = {
 
     const msg = await message.channel.send('Resetting...')
     client.destroy()
+    process.exit();
     client.login(client.config.app.token)
     msg.edit('Đã restart thành công bot!');
     },
